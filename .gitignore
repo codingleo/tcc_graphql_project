@@ -2,3 +2,4 @@
 *lock.json
 *.lock
 *-error.log
+.env
