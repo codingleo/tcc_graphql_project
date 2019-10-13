@@ -16,6 +16,7 @@ const isDev = env === 'development'
 
 const apollo = new ApolloServer({
   introspection: true,
+  playground: true,
   typeDefs: typedefs,
   resolvers,
   formatError: error => {
