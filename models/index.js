@@ -7,7 +7,7 @@ const basename = path.basename(__filename)
 const db = {}
 dotenv.config()
 
-const sequelize = new Sequelize(process.env.DATABASE_URL)
+export const sequelize = new Sequelize(process.env.DATABASE_URL)
 
 fs
   .readdirSync(__dirname)
@@ -28,4 +28,4 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize
 db.Sequelize = Sequelize
 
-module.exports = db
+export default db

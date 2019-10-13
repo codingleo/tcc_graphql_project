@@ -1,9 +1,9 @@
-import db from '../models/index'
+import User from '../models/user'
 
 const resolvers = {
   Query: {
-    users: () => db.User.findAll(),
-    user: (root, { id }) => db.User.findByPk(id)
+    users: () => User.findAll(),
+    user: (root, { id }) => User.findByPk(id)
   }
 }
 
