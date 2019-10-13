@@ -3,8 +3,11 @@ import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
 import { ApolloServer } from 'apollo-server-express'
-import typedefs from './graphql/typeDefs'
-import resolvers from './graphql/resolvers'
+
+import typedefs from '../graphql/typeDefs'
+import resolvers from '../graphql/resolvers'
+
+import '@babel/polyfill'
 
 dotenv.config()
 
