@@ -19,6 +19,7 @@ const apollo = new ApolloServer({
   typeDefs: typedefs,
   resolvers,
   formatError: error => {
+    console.log(error)
     return error
   },
   context: ({ req, res }) => {
