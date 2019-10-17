@@ -6,7 +6,7 @@
   "author": "Leonardo Ribeiro <leoribeiro.dsgn@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec babel-node app.js",
+    "dev": "nodemon --exec babel-node src/index.js",
     "build": "webpack",
     "start": "node index.js"
   },

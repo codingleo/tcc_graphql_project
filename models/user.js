@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize'
-import { sequelize } from './index'
+import db from '../config/db'
 
-const User = sequelize.define('User', {
+const User = db.define('User', {
   firstName: {
     type: Sequelize.STRING,
     allowNull: false
@@ -12,9 +12,25 @@ const User = sequelize.define('User', {
   },
   birthDate: {
     type: Sequelize.DATE
+  },
+  address: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  country: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  city: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  address2: {
+    type: Sequelize.STRING,
+    allowNull: true
   }
 }, {
-  sequelize,
+  db,
   modelName: 'user',
   timestamps: true
 })

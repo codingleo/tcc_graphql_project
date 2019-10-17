@@ -2,8 +2,12 @@ import User from '../models/user'
 
 const resolvers = {
   Query: {
-    users: () => User.findAll(),
-    user: (root, { id }) => User.findByPk(id)
+    users: async () => User.findAll(),
+    user: async (root, { id }) => User.findByPk(id)
+  },
+  Mutation: {
+    newUser: async (root, { input }) => User.create({ ...input }),
+    updateUser: async (root, { id, input }) => User.update({ ...input }, { where: { id } }).then(() => User.findByPk(id))
   }
 }
 
