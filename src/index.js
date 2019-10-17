@@ -9,6 +9,17 @@ import resolvers from '../graphql/resolvers'
 
 import '@babel/polyfill'
 
+import db from '../config/db'
+
+db.authenticate()
+  .then(() => {
+    db.sync()
+    console.log('connected successfully to databse')
+  })
+  .catch(err => {
+    console.error(err)
+  })
+
 dotenv.config()
 
 const env = process.env.NODE_ENV || 'development'
